@@ -1,0 +1,13 @@
+  {
+    "name": "emoji readr",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["myscript.js"],
+      "run_at": "document_end"
+    } 
+	],
+    "manifest_version": 2
+  }
