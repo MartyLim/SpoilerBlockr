@@ -1,10 +1,11 @@
-walk(document.body); 
 
-function walk(node)  
+
+function walk(node, abort)  
 {
 	//Walks through the DOM (Document Object Model)
 	//Stolen from http://is.gd/mwZp7E
 	
+	var yesBlah = false;
 	var child, next;
 
 	switch ( node.nodeType )  
@@ -22,22 +23,47 @@ function walk(node)
 			break;
 
 		case 3: 
-			swapForEmoji(node);
+			if (yesBlah == true ) {
+				blahify(node);
+				break;
+			}
+		
+			if (yesAbort(node)) {
+				yesBlah = true;
+				blahify(node);
+			}
 			break;
 	}
 }
 
-function swapForEmoji(textNode) 
+function yesAbort(textNode)
+{
+	var t = textNode.nodeValue;
+
+	if (t.includes("Avengers") || t.includes("Endgame") || t.includes("Thanos") || t.includes("Spoiler")
+		|| t.includes("spoiler") || t.includes("dies")) {
+		return true;
+	}
+
+	return false;
+}
+
+function blahify(textNode)
 {
 	var v = textNode.nodeValue;
+	var blength = (v.length / 5) - 1;
+	v = "";
 
-	v = v.replace(/\bGrinning Face\b/g, '\u{1F436}');
-	v = v.replace(/\bpasta\b/g, "caaaaarbs");
-	v = v.replace(/\bbread\b/g, "caaaaarbs");
-	v = v.replace(/\bBread\b/g, "Caaaaarbs");
-	v = v.replace(/\bScones\b/g, "Caaaaarbs");
-	v = v.replace(/\bBuns\b/g, "Caaaaarbs");
-	v = v.replace(/\bspaghetti\b/g, "caaaaarbs");
-	
+	while (blength > 0) {
+		v += "blah "
+		blength--;
+	}
+	v += "blah"
+
 	textNode.nodeValue = v;
 }
+
+
+walk(document.body); 
+
+
