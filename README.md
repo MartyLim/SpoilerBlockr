@@ -4,4 +4,4 @@ Haven't watched the new Avengers movie yet? Hate spoilers? This extension will '
 
 ### Before and After the Blahification
 
-![blahify](pjimage.jpg)
+![blahify](images/pjimage.jpg)
