@@ -1,7 +1,7 @@
   {
-    "name": "emoji readr",
+    "name": "spoilr blockr",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Haven't watched the new Avengers movie yet? Hate spoilers? This extension will 'blahify' all potential spoilers that you may come across while browing the Web.",
     "content_scripts": [
     {
       "matches": ["*://*/*"],
